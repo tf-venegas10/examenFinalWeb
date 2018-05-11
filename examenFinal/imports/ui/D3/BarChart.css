@@ -1,0 +1,15 @@
+/*-------------
+Barchart styles
+ --------------*/
+
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: red;
+}
+
+.axis--x path {
+    display: none;
+}
