@@ -44,6 +44,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="78" column="23" lean-forward="true" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RealChart.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/D3/RealChart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1721">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Buses.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/Buses.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APICalls.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="APICalls.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/APICalls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="479">
+              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -90,34 +114,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthNavbar.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/navbar/AuthNavbar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NavbarUser.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/navbar/NavbarUser.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/MainPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -135,10 +137,16 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>#FFD31E</find>
+      <find>svg</find>
+      <find>this.up</find>
+      <find>buses</find>
     </findStrings>
     <replaceStrings>
       <replace>black</replace>
       <replace>white</replace>
+      <replace>this.svg</replace>
+      <replace>this.xAxis</replace>
+      <replace>this.</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -147,20 +155,20 @@
         <option value="$PROJECT_DIR$/client/main.js" />
         <option value="$PROJECT_DIR$/imports/ui/D3/Barchart.css" />
         <option value="$PROJECT_DIR$/imports/ui/D3/BarChart.js" />
-        <option value="$PROJECT_DIR$/imports/ui/D3/RealChart.js" />
         <option value="$PROJECT_DIR$/imports/ui/D3/RealChart.css" />
         <option value="$PROJECT_DIR$/client/main.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/imports/ui/MainPage.js" />
         <option value="$PROJECT_DIR$/imports/LoginPage.js" />
-        <option value="$PROJECT_DIR$/imports/ui/App.js" />
         <option value="$PROJECT_DIR$/imports/ui/navbar/NavbarUser.js" />
         <option value="$PROJECT_DIR$/imports/authentication/Auth.css" />
         <option value="$PROJECT_DIR$/imports/ui/navbar/AuthNavbar.js" />
         <option value="$PROJECT_DIR$/imports/ui/LoginPage.css" />
         <option value="$PROJECT_DIR$/imports/ui/LoginPage.js" />
-        <option value="$PROJECT_DIR$/server/APICalls.js" />
         <option value="$PROJECT_DIR$/imports/api/BusesAPI.js" />
+        <option value="$PROJECT_DIR$/imports/ui/D3/RealChart.js" />
+        <option value="$PROJECT_DIR$/server/APICalls.js" />
+        <option value="$PROJECT_DIR$/imports/ui/App.js" />
       </list>
     </option>
   </component>
@@ -228,6 +236,19 @@
             <path>
               <item name="examenFinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="examenFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="examenFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="examenFinal" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="D3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="examenFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="examenFinal" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -283,12 +304,12 @@
       <option name="presentableId" value="Default" />
       <updated>1525813782409</updated>
       <workItem from="1525813783757" duration="963000" />
-      <workItem from="1525968632255" duration="5629000" />
+      <workItem from="1525968632255" duration="11027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6592000" />
+    <option name="totallyTimeSpent" value="11990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -321,7 +342,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -367,14 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/D3/RealChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -440,16 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/authentication/Auth.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -494,14 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/navbar/NavbarUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="24" column="83" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/LoginPage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3775">
@@ -528,6 +525,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/navbar/NavbarUser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="24" column="83" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/Buses.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -538,10 +543,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/APICalls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="479">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="14" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="78" column="23" lean-forward="true" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/D3/RealChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1721">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

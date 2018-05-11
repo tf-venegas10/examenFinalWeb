@@ -20,21 +20,19 @@ Meteor.methods({
             'GET',
             'http://webservices.nextbus.com/service/publicJSONFeed?command=agencyList'
         ).then((result) => {
-            return JSON.parse(result);
+            return JSON.parse(result.content).agency    ;
         })
             .catch((error) => {
                 throw new Meteor.Error('500', `${error.message}`);
             });
     },
 
-    'buses.getRoutesByAgency'(agencyTag) {
+    'buses.getRoute'(agencyTag, routeTag) {
         return callService(
             'GET',
-            'http://webservices.nextbus.com/service/publicJSONFeed?command=routeList&a=' + agencyTag
+            'http://webservices.nextbus.com/service/publicJSONFeed?command=schedule&a=' + agencyTag+'&r='+routeTag
         ).then((result) => {
-            return JSON.parse(result);
-        }).then((result) => {
-            return result.agency;
+            return (result.data);
         })
             .catch((error) => {
                 throw new Meteor.Error('500', `${error.message}`);
