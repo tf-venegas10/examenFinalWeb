@@ -29,8 +29,18 @@ export default class RealChart extends Component {
         attr("height", this.height);
         if(!this.props.data|| this.props.data.length<1) return;
 
+
+
         const minDate = d3.min(this.props.data[0], d => d.date); //changed 1 by 0 because the first element is the # 0
         const maxDate = new Date(minDate.getTime() + 24*60*60*1000); // minDate + 24 hours-- changed 22 for 24
+        let data=[];
+        this.props.data.forEach((arr)=>{
+            let arri=arr.filter((d)=>{
+                return (d.date.valueOf()<maxDate.valueOf()*this.props.maxVal)
+            });
+            data.push(arri);
+        });
+
         this.x = d3.scaleTime()
             .domain([ minDate, maxDate ])
             .range([this.state.margin.left, this.width - this.state.margin.right]);
@@ -48,19 +58,12 @@ export default class RealChart extends Component {
                 .tickFormat((d) => this.props.selectedRoute.header.stop[d].content));
 
 
-        this.draw()
+        this.draw(data)
 
     }
-    draw() {
+    draw(data) {
 
-        if (!this.props.data){
-            console.log("not propsed");
-            return;
-        }
-        console.log("propsed");
-        /*
-        drawing code here
-         */
+
         const line = d3.line()
             .x(d => this.x(d.date))
             .y((d,i) => this.y(i) + this.y.bandwidth()/2);
@@ -72,7 +75,7 @@ export default class RealChart extends Component {
             .call(this.yAxis);
 
         this.svg.selectAll(".routes")
-            .data(this.props.data)
+            .data(data)
             .enter()
             .append("path")
             .attr("fill", "none")

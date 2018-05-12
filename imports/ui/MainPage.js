@@ -9,7 +9,7 @@ import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import "/imports/api/Comments.js";
 import Subheader from 'material-ui/Subheader';
-
+import Slider from 'material-ui/Slider';
 
 // App component - represents the whole app
 
@@ -22,14 +22,24 @@ export default class MainPage extends Component {
             buses: [],
             comment: "",
             type: -1,
-            types: []
+            types: [],
+            secondSlider: 1,
         };
         this.handleChangeAgency = this.handleChangeAgency.bind(this);
         this.handleChangeRoute = this.handleChangeRoute.bind(this);
         this.comment = this.comment.bind(this);
         this.changeCommentText = this.changeCommentText.bind(this);
         this.handleTypeOfRoute = this.handleTypeOfRoute.bind(this);
+        this.handleSecondSlider = this.handleSecondSlider.bind(this);
     }
+
+
+
+    handleSecondSlider = (event, value) => {
+
+        this.setState({secondSlider: value});
+
+    };
 
     handleChangeAgency(event, index, value) {
         this.setState((prevState) => {
@@ -40,7 +50,7 @@ export default class MainPage extends Component {
         if (value) {
             Meteor.call('buses.getRoutesList', value, (err, res) => {
                 if (err) throw err;
-                console.log(res);
+
                 this.setState({routes: res});
 
             })
@@ -60,7 +70,7 @@ export default class MainPage extends Component {
             Meteor.call("buses.getRoute", this.state.agency, value, (err, res) => {
                     if (err) throw err;
                     else {
-                        console.log(res);
+
                         this.setState({types: res.route});
                     }
                 }
@@ -70,8 +80,8 @@ export default class MainPage extends Component {
 
     handleTypeOfRoute(event, index, value) {
         this.setState({type: value});
-        console.log(value);
-        if (value !== -1) {
+
+        if (value && value !== -1) {
             this.selectedRoute = this.state.types[value];
             this.buses = [];
             /**
@@ -92,8 +102,8 @@ export default class MainPage extends Component {
                     this.buses.push(route);
                 }
             }
-            console.log(this.buses);
-            console.log(this.selectedRoute);
+
+
             this.setState({buses: this.buses})
         }
         else {
@@ -150,8 +160,8 @@ export default class MainPage extends Component {
                             this.buses.push(route);
                         }
                     }
-                    console.log(this.buses);
-                    console.log(this.selectedRoute);
+
+
                     this.setState({buses: this.buses})
 
                 }
@@ -231,6 +241,17 @@ export default class MainPage extends Component {
                             </DropDownMenu>
                         </MuiThemeProvider>
                         <br/>
+                        <div className="sliders">
+                            <h5>Filter by frame of hours</h5>
+                            <MuiThemeProvider>
+                                <Slider min={0}
+                                        max={1}
+                                        step={0.01}
+                                        value={this.state.secondSlider}
+                                        onChange={this.handleSecondSlider}/>
+                            </MuiThemeProvider>
+                        </div>
+                        <br/>
                         {this.state.type !== -1 ?
                             <div className="comment">
                                 <h5>Comment this route</h5>
@@ -261,7 +282,8 @@ export default class MainPage extends Component {
                         }
                     </div>
                     <div className="col-sm-8 col-12">
-                        <RealChart data={this.state.buses} selectedRoute={this.selectedRoute}/>
+                        <RealChart data={this.state.buses} selectedRoute={this.selectedRoute}
+                                   maxVal={this.state.secondSlider}/>
                     </div>
                 </div>
             </div>
