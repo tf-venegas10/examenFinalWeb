@@ -248,7 +248,7 @@ export default class MainPage extends Component {
                             </div>
                             : null}
                         <br/>
-                        {(this.props.comments && this.props.comments.length > 0) ?  
+                        {(this.props.comments && this.props.comments.length > 0) ?
                             <div className="comments">
                                 <h5>Comments on routes:</h5>
                                 <MuiThemeProvider>
