@@ -24,9 +24,6 @@ Index styles
         color: black;
     }
 
-    .interactions-content {
-        margin-top: 50%;
-    }
 
     .main-visualization {
         background-color: white;
@@ -204,9 +201,7 @@ Index styles
 
     }
 
-    .img-logo {
-        margin-top: 35%;
-    }
+
 
     .center-items {
         margin: auto;
@@ -290,6 +285,5 @@ Index styles
     .invitation {
         font-size: 25px;
         text-align: left;
-        margin-top: 5%;
     }
 }

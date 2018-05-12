@@ -136,7 +136,6 @@ export default class AuthManager extends Component{
                             onPswdChange={this.handlePswdChange}
                             onPswdVerChange={this.handlePswdVerChange}
                             loginError={this.state.loginError}
-                            disableButton={this.state.disableButton}
                             match={this.state.pswdMatch}
                             emailError={this.state.emailError}
                             usernameError={this.state.usernameError}

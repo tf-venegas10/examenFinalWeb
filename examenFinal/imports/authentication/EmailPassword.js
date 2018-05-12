@@ -105,7 +105,6 @@ export default class EmailPassword extends Component {
                         <div className="form-group center-items">
                             <button type="submit"
                                     className="btn auth-button"
-                                    disabled={this.props.disableButton}
                                     aria-label={this.props.typeAuth + " button"}>
                                 {this.props.typeAuth}
                             </button>
@@ -122,5 +121,4 @@ EmailPassword.propTypes = {
     typeAuth: PropTypes.string.isRequired,
     onEmailChange: PropTypes.func.isRequired,
     onPswdChange: PropTypes.func.isRequired,
-    disableButton: PropTypes.bool.isRequired,
 };

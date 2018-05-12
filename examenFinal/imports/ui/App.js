@@ -1,15 +1,14 @@
 import React, {Component} from "react";
 import {Meteor} from 'meteor/meteor';
 import {withTracker} from "meteor/react-meteor-data";
-import {Tones} from "/imports/api/Tones.js"
 
 import "./App.css";
 import MainPage from "./MainPage";
-import LoginPage from "./LoginPage";
 import AuthManager from "../authentication/AuthManager";
 import AuthNavbar from "./navbar/AuthNavbar";
 import NavbarUser from "./navbar/NavbarUser";
-import RealChart from "./D3/RealChart";
+import LoginPage from "./LoginPage";
+import {Comments} from "../api/Comments.js";
 
 class App extends Component {
     constructor(props) {
@@ -46,37 +45,23 @@ class App extends Component {
         Meteor.logout();
     }
 
-    componentDidMount(){
-       /* Meteor.call("buses.getAgencyList",(err,res)=>{
-            if (err) throw err;
-            res.forEach((f)=>{
-                if(f.title.includes("San Francisco")){
-                    console.log(f);
-                }
-            })
-        });
-       */
 
-       Meteor.call("buses.getRoute","sf-muni","N", (err,res)=> {
-               if (err) throw err;
-               else {
-                   console.log(res.route[0].tr);
-                   this.buses = [];
-                   for (let bus of res.route[0].tr) {
-                       let route = bus.stop.filter((d) => d.content !== "--");
-                       route.forEach((d) => d.date = new Date(+d.epochTime));
-                       this.buses.push(route);
-                   }
-                   console.log(this.buses);
-               }
-           }
-        );
-
-    }
     render() {
         return (
             <div className="app-content">
-                <RealChart data={this.buses}/>
+                {
+                    this.props.currentUser ?
+                        <NavbarUser onLogoutCallback={this.handleLogoutSubmit}/>
+                        : this.state.location !== "index" ? <AuthNavbar goToIndex={this.goToIndex}/> : null
+                }
+                {
+                    (this.props.currentUser ?
+                        <MainPage comments={this.props.comments}/>
+                        : (this.state.location === "index" ?
+                            <LoginPage   goToSignUp={this.goToSignUp} goToLogin={this.goToLogin}/>
+                            : <AuthManager isLogin={this.state.location !== "SignUp"} typeAuth={this.state.location}/>))
+
+                }
 
             </div>
         );
@@ -84,15 +69,12 @@ class App extends Component {
 }
 
 export default withTracker(() => {
-
+    Meteor.subscribe("comments");
     if(Meteor.user()) {
-       /* Meteor.subscribe('tones');
-        let all = Tones.find().fetch();
-        console.log(all);
-        */
+        let all= Comments.find().fetch();
         return {
             currentUser: Meteor.user(),
-
+            comments:all
         }
     }
     else{
