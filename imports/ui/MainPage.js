@@ -81,7 +81,7 @@ export default class MainPage extends Component {
     handleTypeOfRoute(event, index, value) {
         this.setState({type: value});
 
-        if (value && value !== -1) {
+        if ((value|| value===0) && value !== -1) {
             this.selectedRoute = this.state.types[value];
             this.buses = [];
             /**
@@ -94,7 +94,10 @@ export default class MainPage extends Component {
             }
             else {
                 for (let bus of this.state.types[value].tr) {
-                    let route = bus.stop.filter((d) => d.content !== "--");
+                    let route=[];
+                    if(bus.stop) {
+                        route = bus.stop.filter((d) => d.content !== "--");
+                    }
                     /**
                      * Hay un error con la hora, esto da la hora GMT o local tocaría acomodarla a la zona horaria.
                      */
@@ -152,7 +155,10 @@ export default class MainPage extends Component {
                     }
                     else {
                         for (let bus of res.route[type].tr) {
-                            let route = bus.stop.filter((d) => d.content !== "--");
+                            let route=[];
+                            if(bus.stop) {
+                                route = bus.stop.filter((d) => d.content !== "--");
+                            }
                             /**
                              * Hay un error con la hora, esto da la hora GMT o local tocaría acomodarla a la zona horaria.
                              */

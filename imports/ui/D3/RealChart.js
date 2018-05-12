@@ -32,11 +32,11 @@ export default class RealChart extends Component {
 
 
         const minDate = d3.min(this.props.data[0], d => d.date); //changed 1 by 0 because the first element is the # 0
-        const maxDate = new Date(minDate.getTime() + 24*60*60*1000); // minDate + 24 hours-- changed 22 for 24
+        const maxDate = new Date((minDate.getTime() + 24*60*60*1000)*this.props.maxVal); // minDate + 24 hours-- changed 22 for 24
         let data=[];
         this.props.data.forEach((arr)=>{
             let arri=arr.filter((d)=>{
-                return (d.date.valueOf()<maxDate.valueOf()*this.props.maxVal)
+                return (d.date.valueOf()<maxDate.valueOf())
             });
             data.push(arri);
         });
@@ -45,7 +45,7 @@ export default class RealChart extends Component {
             .domain([ minDate, maxDate ])
             .range([this.state.margin.left, this.width - this.state.margin.right]);
         this.y = d3.scaleBand()
-            .domain(d3.range(this.props.data[0].length)) //changed 1 by 0 because the first element is the # 0
+            .domain(d3.range(data[0].length)) //changed 1 by 0 because the first element is the # 0
             .rangeRound([this.height - this.state.margin.bottom, this.state.margin.top]);
 
         this.xAxis = g => g
